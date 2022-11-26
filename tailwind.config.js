@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'background': '#f5f5f0',
+        'dk-background': 'rgba(216,191,171,0.24)'
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],

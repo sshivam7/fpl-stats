@@ -30,7 +30,7 @@ export default function InfoCard(props) {
                 whileHover={{
                     scale: 1.1
                 }}
-                className={`col-span-${props.span} shadow rounded-2xl bg-neutral-800 hover:cursor-pointer hover:shadow-2xl`}>
+                className={`${props.span === 2 ? 'col-span-2' : ''} shadow rounded-2xl bg-neutral-800 hover:cursor-pointer hover:shadow-2xl`}>
                 <h3 className="font-stat font-bold bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                                         text-transparent text-4xl p-6">{props.title}</h3>
             </motion.div>
