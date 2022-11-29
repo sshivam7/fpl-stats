@@ -31,3 +31,7 @@ a {
 ::selection {
   background: rgba(250, 52, 177, 0.32); /* WebKit/Blink Browsers */
 }
+
+.rtl {
+  direction: rtl;
+}

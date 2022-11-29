@@ -72,7 +72,7 @@ const temp = [
         value: 4
     },
     {
-        week: 0,
+        week: 20,
         value: 53
     },
     {
@@ -223,7 +223,7 @@ const temp2 = [
         value: 4
     },
     {
-        week: 0,
+        week: 20,
         value: 53
     },
     {

@@ -10,12 +10,13 @@ import Card3D from "../components/cards/Card3D";
 import PlayerCountCard from "../components/cards/PlayerCountCard";
 import ToggleGraph from "../components/graphs/ToggleGraph"
 import InfoCard from "../components/cards/InfoCard";
+import BestPlayerCard from "../components/cards/BestPlayerCard";
 import FAQ_DATA from "../constants/Data"
 import {Waypoint} from "react-waypoint";
 import Link from "next/link";
 
 export default function Home() {
-    const TOTAL_PAGES = 8;
+    const TOTAL_PAGES = 9;
     const [atPlayerCard, setAtPlayerCard] = useState(false);
 
     return (
@@ -26,7 +27,7 @@ export default function Home() {
                     factor={3}
                     style={{backgroundImage: `url(/background.svg)`, backgroundSize: 'cover'}}>
                 </ParallaxLayer>
-                <ParallaxLayer offset={0} sticky={{start: 0, end: TOTAL_PAGES - 4}}>
+                <ParallaxLayer offset={0} sticky={{start: 0, end: 4}}>
                     <ScrollIndicator />
                 </ParallaxLayer>
                 <ParallaxLayer offset={0} sticky={{start: 0, end: 2}}>
@@ -35,7 +36,7 @@ export default function Home() {
                             <Link href="#overview">
                                 <a className="text-black font-stat text-2xl tracking-wide p-5 hover:text-pink-600">Overview</a>
                             </Link>
-                            <Link href="">
+                            <Link href="#get-started">
                                 <a className="text-black font-stat text-2xl tracking-wide p-5 hover:text-pink-600">My Stats</a>
                             </Link>
                             <Link href="#faq">
@@ -67,6 +68,12 @@ export default function Home() {
                                 <Sphere scale={0.5} position={[-1, 0, 1]} color="#6600ff"/>
                             </Suspense>
                         </Canvas>
+                        <h3 className="absolute w-40 right-0 top-72 text-2xl font-stat bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400
+                                        text-transparent">"View your FPL Statistics"</h3>
+                        <h3 className="absolute w-40 left-44 top-52 text-2xl font-stat bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400
+                                        text-transparent">"See the top scoring player"</h3>
+                        <h3 className="absolute w-40 left-56 bottom-56 text-2xl font-stat bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
+                                        text-transparent">"View gameweek point totals"</h3>
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={1} speed={0.5} className="invisible sm:visible">
@@ -89,6 +96,7 @@ export default function Home() {
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer id="overview" offset={3} factor={2} className="bg-gradient-to-b from-background to-cyan-400">
+                    <div className="flex flex-col h-full">
                         <div className="w-2/3 h-full mx-auto text-center">
                             <h2 className="mb-2 mt-40 font-poppins font-bold bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                                         text-transparent text-9xl">
@@ -100,42 +108,42 @@ export default function Home() {
                                 others.
                             </p>
                         </div>
+                        <BestPlayerCard />
+                    </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={4} speed={0.25}>
-                    <h3 className="absolute right-0 top-1/2 font-stat tracking-wide text-5xl bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600
+                    <h3 className="absolute right-0 top-1/2 font-stat tracking-wide text-6xl bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600
                                         text-transparent rotate-90">Game Week - 23</h3>
                 </ParallaxLayer>
                 <ParallaxLayer offset={4} speed={0.5}>
-                    <h3 className="absolute -right-5 top-1/2 font-stat tracking-wide text-5xl text-neutral-800 rotate-90">Best Player</h3>
+                    <h3 className="absolute -right-5 top-1/2 font-stat tracking-wide text-6xl text-neutral-800 rotate-90">Best Player</h3>
                 </ParallaxLayer>
-                {/*<ParallaxLayer offset={4} sticky={{start: 4, end: 4}} className="bg-gradient-to-b from-cyan-100 to-cyan-400">*/}
-                {/*    <div className="flex justify-center w-full h-full">*/}
-                {/*            <div className="flex items-center flex-col bg-white bg-opacity-40 backdrop-blur-lg rounded-2xl drop-shadow-lg h-[90%] w-1/3">*/}
-                {/*                <h2 className="font-stat font-bold bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600*/}
-                {/*                        text-transparent text-7xl m-4">Haaland</h2>*/}
-                {/*                <div className="flex flex-col items-center justify-center h-full w-full bg-[url('/card-group.svg')] bg-no-repeat bg-center bg-contain">*/}
-                {/*                    <p className="text-white font-stat text-6xl -mt-28">38</p>*/}
-                {/*                </div>*/}
-                {/*                <p className="font-poppins text-neutral-800 mt-3">Gameweek Points</p>*/}
-                {/*                <div className="flex flex-col items-center">*/}
-                {/*                    <h1 className="font-poppins font-black bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600*/}
-                {/*                        text-transparent text-8xl m-4">3 &nbsp; 2 &nbsp; 90</h1>*/}
-                {/*                    <p className="font-poppins font-medium text-neutral-800 text-2xl mb-4">Goals &nbsp; -  &nbsp; Assists &nbsp; -  &nbsp;Minutes</p>*/}
-                {/*                </div>*/}
-                {/*            </div>*/}
-                {/*    </div>*/}
-                {/*</ParallaxLayer>*/}
                 <ParallaxLayer offset={5} factor={2} className="bg-neutral-900">
                     <div className="flex flex-col m-40 mb-36">
-                        <h2 className="w-2/3 h-full font-poppins text-8xl font-bold">Points By Gameweek</h2>
-                        <h3 className="">View average and highest points across the 38 premier league gameweeks.</h3>
+                        <h2 className="w-2/3 h-full font-poppins text-8xl font-bold text-white">Points By Gameweek</h2>
+                        <h3 className="text-white">View average and highest points across the 38 premier league gameweeks.</h3>
                     </div>
                     <div className="flex flex-col items-center">
                         <ToggleGraph width={1000} height={500} />
                     </div>
                 </ParallaxLayer>
+                <ParallaxLayer offset={7} className="bg-neutral-900">
+                    <div id="get-started" className="flex flex-col m-40 -mt-28 rtl">
+                        <h2 className="w-2/3 h-full font-poppins text-8xl font-bold text-white">View Your FPL Statistics</h2>
+                        <h3 className="text-white">Get an overview of your Fantasy Premier League statistics across all 38 gameweeks</h3>
+                    </div>
+                    <div className="flex w-full m-40">
+                        <div className="flex flex-col mr-10 w-3/5">
+                            <label className="text-white font-roboto " htmlFor="name">Enter your manager ID (see FAQ for help)</label>
+                            <input className="bg-neutral-700 text-white border-none rounded-lg h-14 p-2" type="text" id="name" name="name" />
+                        </div>
+                        <div className="mt-auto mb-0">
+                            <button className="bg-gradient-to-tr text-white rounded-lg px-14 py-4 from-rose-500 to-orange-400 hover:from-white hover:to-white hover:text-neutral-900">Get Your Stats</button>
+                        </div>
+                    </div>
+                </ParallaxLayer>
                 {/* FAQ and About */}
-                <ParallaxLayer offset={7} id="faq" className="bg-background">
+                <ParallaxLayer offset={8} id="faq" className="bg-background">
                     <div className="flex flex-wrap items-center justify-center justify-around w-full h-full">
                         <h2 className="font-poppins font-black bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                                         text-transparent text-7xl px-5 sm:px-10"><span className="text-neutral-800">FAQ</span> & ABOUT</h2>
