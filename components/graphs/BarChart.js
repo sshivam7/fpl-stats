@@ -6,14 +6,14 @@ import { scaleBand, scaleLinear } from '@visx/scale';
 import { useTooltip, useTooltipInPortal, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 
-const verticalMargin = 120;
-
-// accessors
-const getData = (d) => d.week;
-const getValue = (d) => d.value;
-const getDataFrequency = (d) => ((d.value + 3) / 200) * 100;
-
 export default function BarChart( props ) {
+        const verticalMargin = props.alt ? 120 : 140;
+
+    // accessors
+    const getData = (d) => d.week;
+    const getValue = (d) => d.value;
+    const getDataFrequency = (d) => ((d.value + (props.alt ? 3 : 7)) / 200) * 100;
+
     const data = props.data;
     const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip, showTooltip } = useTooltip();
     let tooltipTimeout;

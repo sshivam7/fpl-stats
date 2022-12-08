@@ -1,16 +1,15 @@
 import React, {useState} from "react";
 import BarChart from "./BarChart";
-import temp from "../../constants/temp"
 
 export default function ToggleGraph(props) {
     const [avgSel, setAvgSel] = useState(true);
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col -mt-20">
             { avgSel ? (
-                <BarChart width={props.width} height={props.height} data={temp.temp} alt={avgSel}/>
+                <BarChart width={props.width} height={props.height} data={props.data.averageScore} alt={avgSel}/>
             ) : (
-                <BarChart width={props.width} height={props.height} data={temp.temp2} alt={avgSel}/>
+                <BarChart width={props.width} height={props.height} data={props.data.highScore} alt={avgSel}/>
             )}
 
             <h3 className="font-roboto flex mb-8 -mt-6 justify-center text-white">Game Week</h3>

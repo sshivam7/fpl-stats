@@ -14,8 +14,11 @@ import BestPlayerCard from "../components/cards/BestPlayerCard";
 import FAQ_DATA from "../constants/Data"
 import {Waypoint} from "react-waypoint";
 import Link from "next/link";
+import getCurrentGW from "../services/getTopPlayerStats";
+import getTopPlayerStats from "../services/getTopPlayerStats";
+import getGameWeekData from "../services/getGameWeekData";
 
-export default function Home() {
+export default function Home(props) {
     const TOTAL_PAGES = 9;
     const [atPlayerCard, setAtPlayerCard] = useState(false);
 
@@ -92,7 +95,7 @@ export default function Home() {
                 <ParallaxLayer offset={2} className="bg-background">
                     <div className="absolute w-full left-1/2 h-full">
                         <Waypoint onEnter={() => setAtPlayerCard(true)}/>
-                        <PlayerCountCard atPos={atPlayerCard}/>
+                        <PlayerCountCard atPos={atPlayerCard} numPlayers={props.total_players}/>
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer id="overview" offset={3} factor={2} className="bg-gradient-to-b from-background to-cyan-400">
@@ -108,7 +111,7 @@ export default function Home() {
                                 others.
                             </p>
                         </div>
-                        <BestPlayerCard />
+                        <BestPlayerCard data={props.bestGWPlayer}/>
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={4} speed={0.25}>
@@ -124,7 +127,7 @@ export default function Home() {
                         <h3 className="text-white">View average and highest points across the 38 premier league gameweeks.</h3>
                     </div>
                     <div className="flex flex-col items-center">
-                        <ToggleGraph width={1000} height={500} />
+                        <ToggleGraph width={1000} height={600} data={props.gameweekData} />
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={7} className="bg-neutral-900">
@@ -180,5 +183,20 @@ export default function Home() {
     )
 }
 
-//TODO: Make FOOTER
-//
+export async function getServerSideProps({ req, res }) {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=86400, stale-while-revalidate=86400'
+    )
+
+    const response = await fetch("https://fantasy.premierleague.com/api/bootstrap-static/");
+    let data = await response.json();
+
+    return {
+        props: {
+            total_players: data.total_players,
+            bestGWPlayer: await getTopPlayerStats(data),
+            gameweekData: getGameWeekData(data.events)
+        },
+    }
+}

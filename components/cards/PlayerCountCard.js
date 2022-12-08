@@ -9,8 +9,8 @@ export default function PlayerCountCard(props) {
             <h2 className="font-poppins font-black w-2/3 bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                                         text-transparent text-7xl"><span className="text-neutral-800">TOTAL</span> PLAYERS</h2>
             <CountUp
-                start={10000}
-                end={10500}
+                start={(props.numPlayers / 1000) - 500}
+                end={props.numPlayers / 1000}
                 enableScrollSpy={true}
                 duration={5}
                 separator={","}
