@@ -71,11 +71,11 @@ export default function Home(props) {
                             </Suspense>
                         </Canvas>
                         <h3 className="absolute w-40 right-0 top-72 text-2xl font-stat bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400
-                                        text-transparent invisible lg:visible">"View your FPL Statistics"</h3>
+                                        text-transparent invisible lg:visible">&quot;View your FPL Statistics&quot;</h3>
                         <h3 className="absolute w-40 left-44 top-52 text-2xl font-stat bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400
-                                        text-transparent invisible lg:visible">"See the top scoring player"</h3>
+                                        text-transparent invisible lg:visible">&quot;See the top scoring player&quot;</h3>
                         <h3 className="absolute w-40 left-56 bottom-56 text-2xl font-stat bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
-                                        text-transparent invisible lg:visible">"View gameweek point totals"</h3>
+                                        text-transparent invisible lg:visible">&quot;View gameweek point totals&quot;</h3>
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={1} speed={0.5} className="invisible md:visible">
