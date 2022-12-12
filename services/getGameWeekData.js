@@ -5,12 +5,12 @@ export default function getGameWeekData(gameweeks) {
     gameweeks.forEach((week) => {
         averageScore.push({
             week: week.id,
-            value: week.average_entry_score
+            value: week.average_entry_score ? week.average_entry_score : 0
         })
 
         highScore.push({
             week: week.id,
-            value: week.highest_score
+            value: week.highest_score ? week.highest_score : 0
         })
     });
 

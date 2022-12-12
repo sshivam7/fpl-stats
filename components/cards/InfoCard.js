@@ -40,7 +40,7 @@ export default function InfoCard(props) {
     function ExpandedCard(props) {
         return (
             <div className="fixed top-0 left-0 z-10 h-full w-full bg-neutral-50 bg-opacity-75">
-                <div className="absolute top-1/4 left-1/4 h-3/5 w-1/2 rounded-2xl bg-neutral-800">
+                <div className="absolute top-1/4 h-3/5 w-full md:top-1/4 md:left-1/4 md:h-3/5 md:w-1/2 rounded-2xl bg-neutral-800">
                     <button className="absolute top-4 right-4 bg-white text-2xl text-neutral-800 rounded-full px-4 py-2 " onClick={closeCard}>&#10006;</button>
                     <h3 className="font-poppins font-bold bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
                                         text-transparent text-4xl p-10 pb-4">{props.full_title}</h3>

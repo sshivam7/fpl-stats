@@ -4,28 +4,28 @@ const FAQ_DATA = [
         span: 2,
         title: 'Learn how to get your manager ID',
         full_title: 'How to get your manager ID',
-        full_content: 'Learn how to get you manager ID FULL'
+        full_content: 'Personal statistics are currently a work in progress. Please check back later.'
     },
     {
         key: 2,
         span: 1,
         title: 'About FPL Stats',
         full_title: 'About FPL Statistics',
-        full_content: ''
+        full_content: 'FPL Statistics is a website built to give you an overview of how your FPL team performed. You can see your own stats, as well as a week by week breakdown of the highest and average point totals.'
     },
     {
         key: 3,
         span: 1,
         title: 'Privacy Policy',
         full_title: 'Privacy',
-        full_content: 'No information is collected about you or your fpl team. All data is stored locally and nothing it sent back to our servers.'
+        full_content: 'No personal information is collected and/or retained. All data is routed through the FPL API and shown directly to the user.'
     },
     {
         key: 4,
         span: 2,
-        title: 'Currently a long test string',
-        full_title: 'Test',
-        full_content: ''
+        title: 'View supporting links and information',
+        full_title: 'View supporting links and information',
+        full_content: 'The github repository for this is located at: https://github.com/sshivam7/fpl-stats'
     },
 ];
 
