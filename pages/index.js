@@ -130,7 +130,7 @@ export default function Home(props) {
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer offset={7} className="bg-neutral-900">
-                    <div id="get-started" className="flex flex-col m-4 md:m-40 -mt-60 md:-mt-28 rtl">
+                    <div id="get-started" className="flex flex-col m-4 md:m-40 md:mt-0 rtl">
                         <h2 className="w-full lg:w-2/3 h-full font-poppins text-6xl md:text-8xl font-bold text-white">View Your FPL Statistics</h2>
                         <h3 className="text-white">Get an overview of your Fantasy Premier League statistics across all 38 gameweeks</h3>
                     </div>
