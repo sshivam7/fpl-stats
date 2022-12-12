@@ -12,7 +12,7 @@ import ToggleGraph from "../components/graphs/ToggleGraph"
 import InfoCard from "../components/cards/InfoCard";
 import BestPlayerCard from "../components/cards/BestPlayerCard";
 import FAQ_DATA from "../constants/Data"
-import {Waypoint} from "react-waypoint";
+import { Waypoint } from "react-waypoint";
 import Link from "next/link";
 import getTopPlayerStats from "../services/getTopPlayerStats";
 import getGameWeekData from "../services/getGameWeekData";
