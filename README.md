@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <br>
+     <img src="./imgs/icon.png" alt="FPL Stats Icon" width="200">
+  <br>
+  FPL Statisitics
+  <br>
+</h1>
 
-## Getting Started
 
-First, run the development server:
+<p align="center">
+     <img src="https://img.shields.io/badge/Author-Shivam-c182f9?style=for-the-badge">
+     <img src="https://img.shields.io/amo/v/anolight?color=%232bd4ee&label=Version&style=for-the-badge">
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+FPL (Fantasy Premier League) statistics is a webpage built to display the different statistics for a given Premier leage GameWeek. It displays general statistics such as the best player for a particular game week and the amount of players participating in the FPL. The site also covers data showcasing the average and highest point totals across all of the game weeks. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+&nbsp;
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<p align="center">
+  <img src="imgs/demo.gif" width="700"/>
+</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+&nbsp;
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Technology
 
-## Learn More
+This site makes use of Next.js/React, Three.js, Tailwind, Framer Motion, and the Fantasy Premier League Statisitics API.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Screenshots
+![Screen shot of website - 1](imgs/img1.png)
+![Screen shot of website - 2](imgs/img2.png)
